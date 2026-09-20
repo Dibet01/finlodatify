@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Someone worth the message</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme: dark;
+    --ink:#140E26;
+    --ink-2:#1E1636;
+    --rose:#FF4D6D;
+    --rose-soft:#FFA3B4;
+    --cream:#FBF4F0;
+    --muted:#B7ADC8;
+    --line:rgba(255,255,255,.12);
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  :root:not([data-theme="light"]){color-scheme:dark;}
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--cream);
+    font-family:Inter,"Helvetica Neue",Arial,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;}
+  a{color:inherit;}
+  .wrap{width:100%;max-width:1060px;margin:0 auto;padding:0 24px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:clamp(56px,10vw,110px) 0 clamp(48px,8vw,90px);
+    background:
+      radial-gradient(90% 70% at 78% 8%, rgba(255,77,109,.30) 0%, rgba(255,77,109,0) 62%),
+      radial-gradient(70% 60% at 6% 92%, rgba(122,92,255,.28) 0%, rgba(122,92,255,0) 60%),
+      var(--ink);
+  }
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    font-weight:600;letter-spacing:.01em;font-size:16px;
+    margin-bottom:clamp(40px,8vw,72px);
+  }
+  .dot{width:11px;height:11px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 5px rgba(255,77,109,.18);}
+  h1{
+    font-family:Fraunces,Georgia,"Times New Roman",serif;
+    font-weight:400;
+    font-size:clamp(40px,8.2vw,76px);
+    line-height:1.04;
+    letter-spacing:-.02em;
+    margin:0 0 20px;
+    max-width:14ch;
+  }
+  h1 em{font-style:italic;}
+  .sub{
+    font-size:clamp(17px,2.2vw,20px);
+    color:var(--muted);
+    max-width:46ch;
+    margin:0 0 34px;
+  }
+  .cta{
+    display:inline-block;
+    background:var(--rose);
+    color:#22030C;
+    font-weight:600;
+    font-size:17px;
+    text-decoration:none;
+    padding:17px 40px;
+    border-radius:999px;
+    border:0;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    box-shadow:0 10px 30px rgba(255,77,109,.28);
+  }
+  .cta:hover,.cta:focus-visible{background:#FF6480;transform:translateY(-2px);box-shadow:0 16px 38px rgba(255,77,109,.36);}
+  .cta:focus-visible{outline:3px solid var(--cream);outline-offset:3px;}
+  .cta-note{display:block;margin-top:14px;font-size:14px;color:var(--muted);}
+
+  /* STEPS */
+  .steps{padding:clamp(56px,9vw,96px) 0;border-top:1px solid var(--line);background:var(--ink-2);}
+  .steps h2,.faq h2{
+    font-family:Fraunces,Georgia,serif;font-weight:400;
+    font-size:clamp(27px,4.4vw,40px);letter-spacing:-.015em;margin:0 0 40px;max-width:20ch;
+  }
+  ol{list-style:none;margin:0;padding:0;display:grid;gap:30px;}
+  @media(min-width:760px){ol{grid-template-columns:repeat(3,1fr);gap:40px;}}
+  ol li{padding-top:18px;border-top:1px solid var(--line);}
+  .num{font-family:Fraunces,Georgia,serif;font-size:15px;color:var(--rose-soft);display:block;margin-bottom:10px;}
+  ol h3{font-size:19px;font-weight:600;margin:0 0 8px;}
+  ol p{margin:0;color:var(--muted);font-size:16px;}
+
+  /* FAQ */
+  .faq{padding:clamp(56px,9vw,96px) 0;}
+  .qa{border-top:1px solid var(--line);padding:22px 0;max-width:62ch;}
+  .qa h3{font-size:17px;font-weight:600;margin:0 0 6px;}
+  .qa p{margin:0;color:var(--muted);font-size:16px;}
+
+  /* CLOSE */
+  .close{
+    padding:clamp(56px,9vw,100px) 0;
+    background:
+      radial-gradient(80% 90% at 50% 0%, rgba(255,77,109,.22) 0%, rgba(255,77,109,0) 65%),
+      var(--ink-2);
+    border-top:1px solid var(--line);
+    text-align:center;
+  }
+  .close h2{font-family:Fraunces,Georgia,serif;font-weight:400;font-size:clamp(28px,5vw,46px);margin:0 auto 28px;max-width:16ch;letter-spacing:-.015em;}
+
+  footer{padding:36px 0 56px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);}
+  footer p{margin:0 0 8px;max-width:70ch;}
+
+  .rise{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.3,1) forwards;}
+  .rise:nth-of-type(2){animation-delay:.08s;}
+  .d1{animation-delay:.06s;} .d2{animation-delay:.14s;} .d3{animation-delay:.22s;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+  @media(prefers-reduced-motion:reduce){
+    .rise{animation:none;opacity:1;transform:none;}
+    .cta{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span> Fell My Love</div>
+    <h1 class="rise">Skip the small talk. <em>Meet someone.</em></h1>
+    <p class="sub rise d1">Browse real profiles near you, start a conversation when someone catches your eye, and see where it goes. Free to join, no pressure.</p>
+    <div class="rise d2">
+      <a class="cta" href="https://fellmylove.com/NQM7Xptc?aid=gzxkzaxxhx&amp;kid=hxxbbbxapxb" target="_blank" rel="noopener sponsored">Join free tonight</a>
+      <span class="cta-note">Takes about a minute. 18+ only.</span>
+    </div>
+  </div>
+</header>
+
+<section class="steps">
+  <div class="wrap">
+    <h2>Three steps and you're talking to someone</h2>
+    <ol>
+      <li>
+        <span class="num">Step one</span>
+        <h3>Make your profile</h3>
+        <p>A photo and a few honest lines about you. That's genuinely all it takes to get started.</p>
+      </li>
+      <li>
+        <span class="num">Step two</span>
+        <h3>See who's nearby</h3>
+        <p>Browse people in your area and filter for what actually matters to you.</p>
+      </li>
+      <li>
+        <span class="num">Step three</span>
+        <h3>Send the first message</h3>
+        <p>Say hello. The ones worth meeting will say hello back.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <h2>Before you sign up</h2>
+    <div class="qa">
+      <h3>Does it cost anything?</h3>
+      <p>Creating an account and browsing is free. Check the site for details on any paid features before you subscribe.</p>
+    </div>
+    <div class="qa">
+      <h3>Who can join?</h3>
+      <p>Adults 18 and over only.</p>
+    </div>
+    <div class="qa">
+      <h3>Is my information private?</h3>
+      <p>You choose what goes on your profile, and you can delete your account at any time. Read the site's privacy policy for the full picture.</p>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <h2>Someone's about to message you back</h2>
+    <a class="cta" href="https://fellmylove.com/NQM7Xptc?aid=gzxkzaxxhx&amp;kid=hxxbbbxapxb" target="_blank" rel="noopener sponsored">Join free tonight</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Advertising disclosure: this page contains a promotional link, and we may be compensated when you sign up.</p>
+    <p>18+ only. Fell My Love and its logo belong to their respective owner.</p>
+  </div>
+</footer>
+
+</body>
+</html>
